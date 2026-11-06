@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A privacy-first password strength checker and secure password generator.">
+  <meta name="referrer" content="no-referrer">
+  <title>ShieldCheck | Password Security Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><div class="brand"><span class="logo" aria-hidden="true">⬡</span> SHIELDCHECK</div><span class="privacy">● PRIVATE BY DESIGN</span></header>
+    <section class="hero"><p class="eyebrow">PASSWORD SECURITY LAB / 01</p><h1>How strong is your <em>password?</em></h1><p>Test your password strength in real time. Everything stays in your browser — nothing is uploaded, saved, or shared.</p></section>
+    <section class="panel" aria-labelledby="check-heading"><div class="panel-header"><div><p class="eyebrow">01 / ANALYZE</p><h2 id="check-heading">Password strength checker</h2></div><span class="chip">LOCAL ONLY</span></div>
+      <label for="password">Enter a test password</label><div class="password-wrap"><input id="password" type="password" placeholder="Type a password to analyze..." autocomplete="off" spellcheck="false" autocapitalize="off" aria-describedby="privacy-note"><button id="toggle" type="button" aria-label="Show password">SHOW</button></div>
+      <p class="note" id="privacy-note">For safety, use a sample password instead of one from a real account.</p>
+      <div class="meter-header"><span>STRENGTH LEVEL</span><strong id="strength-label" aria-live="polite">Not tested</strong></div><div class="meter" role="progressbar" aria-label="Password strength" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="meter"><div id="meter-fill"></div></div>
+      <div class="stats"><div><span>CHARACTERS</span><strong id="length">0</strong></div><div><span>CHARACTER TYPES</span><strong id="types">0 / 4</strong></div><div><span>ESTIMATED ENTROPY*</span><strong id="entropy">—</strong></div></div>
+      <h3>Security checklist</h3><ul class="checklist" id="checklist"><li id="c-length">At least 12 characters</li><li id="c-upper">Uppercase and lowercase letters</li><li id="c-number">At least one number</li><li id="c-symbol">At least one symbol</li><li id="c-common">Avoid common passwords and obvious patterns</li></ul>
+      <p class="advice" id="advice" aria-live="polite">Enter a sample password to see your results.</p><p class="footnote">*Entropy is a rough character-set estimate, not a guarantee of resistance to cracking. Length, uniqueness, and unpredictability matter most.</p>
+    </section>
+    <section class="panel" aria-labelledby="generate-heading"><div class="panel-header"><div><p class="eyebrow">02 / GENERATE</p><h2 id="generate-heading">Secure password generator</h2></div><span class="chip">CRYPTOGRAPHIC RNG</span></div>
+      <label for="generated">Generated password</label><div class="password-wrap"><input id="generated" type="text" readonly aria-label="Generated password"><button id="copy" type="button">COPY</button></div>
+      <div class="range-head"><label for="size">Password length</label><strong id="size-label">20</strong></div><input id="size" type="range" min="12" max="40" value="20"><div class="options"><label><input type="checkbox" id="uppercase" checked> Uppercase</label><label><input type="checkbox" id="numbers" checked> Numbers</label><label><input type="checkbox" id="symbols" checked> Symbols</label></div><button class="primary" id="generate" type="button">↻ GENERATE NEW PASSWORD</button><p class="note" id="copy-status" role="status">Generated locally using your browser's secure random number generator.</p>
+    </section>
+    <footer><span>SHIELDCHECK · EDUCATIONAL SECURITY TOOL</span><span>NO ACCOUNTS · NO TRACKING · NO PASSWORD STORAGE</span></footer>
+  </main>
+</body>
+</html>
