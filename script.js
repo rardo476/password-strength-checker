@@ -46,4 +46,10 @@ function generate(){
 $('generate').addEventListener('click',generate);
 $('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('generated').value);$('copy-status').textContent='Copied! Remember: clipboard contents may be accessible to other apps.';}catch{$('copy-status').textContent='Clipboard unavailable. Select the password and copy it manually.';}});
 for(const id of ['uppercase','numbers','symbols'])$(id).addEventListener('change',generate);
-generate();update();
+generate();
+update();
+const savedRating = localStorage.getItem('lastStrengthRating');
+
+if (savedRating !== null) {
+  $('strength-label').textContent = savedRating;
+}
