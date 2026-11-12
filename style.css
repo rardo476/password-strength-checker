@@ -1,1 +1,204 @@
-:root{color-scheme:dark;--bg:#090e18;--panel:#111a29;--line:#2a3b50;--text:#f1f7ff;--muted:#9aadc2;--accent:#55f0bb}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#16334a 0%,transparent 40%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text);line-height:1.5}.shell{max-width:900px;margin:auto;padding:24px 22px 45px}.top,footer,.panel-header,.meter-header,.range-head{display:flex;align-items:center;justify-content:space-between;gap:15px}.top{padding:8px 0 60px}.brand{font-weight:900;letter-spacing:2px}.logo{color:var(--accent);font-size:27px}.privacy,.chip,.eyebrow,.meter-header,.stats span,footer{font-size:11px;font-weight:750;letter-spacing:1.4px}.privacy{color:var(--accent)}.hero{margin-bottom:35px}.eyebrow{color:var(--accent);margin:0 0 10px}h1{font-size:clamp(36px,6vw,62px);letter-spacing:-2px;line-height:1.08;max-width:750px;margin:0 0 19px}h1 em{font-style:normal;color:var(--accent)}.hero>p:last-child{color:var(--muted);max-width:650px;font-size:16px}.panel{background:linear-gradient(145deg,#162337,#101927);border:1px solid var(--line);border-radius:18px;padding:30px;margin:22px 0;box-shadow:0 16px 45px #0002}.panel-header{margin-bottom:28px}.panel-header h2{font-size:23px;margin:0;letter-spacing:-.5px}.chip{color:var(--accent);border:1px solid #376c61;padding:7px 9px;border-radius:6px;white-space:nowrap}label{font-size:14px;font-weight:650}.password-wrap{display:flex;border:1px solid #496078;border-radius:10px;margin-top:10px;overflow:hidden;background:#0b1422}.password-wrap:focus-within{outline:2px solid var(--accent);outline-offset:2px}.password-wrap input{background:transparent;color:var(--text);border:0;padding:17px;font:inherit;min-width:0;flex:1;outline:none}.password-wrap button{border:0;border-left:1px solid var(--line);color:var(--accent);background:#172639;padding:0 18px;cursor:pointer;font-weight:800;letter-spacing:1px}.password-wrap button:hover{background:#253c50}.note,.footnote{color:var(--muted);font-size:12px}.meter-header{margin:30px 0 9px;color:var(--muted)}#strength-label{color:var(--text)}.meter{height:11px;background:#29384a;border-radius:20px;overflow:hidden}.meter>div{height:100%;width:0%;background:#f07171;transition:width .2s,background .2s}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:25px 0}.stats>div{border:1px solid var(--line);background:#0c1726;border-radius:10px;padding:15px}.stats span{display:block;color:var(--muted);font-size:10px}.stats strong{font-size:24px}h3{font-size:16px}.checklist{list-style:none;padding:0;display:grid;gap:10px}.checklist li{color:#aebdd0;font-size:14px}.checklist li:before{content:'○';color:#778da5;margin-right:11px}.checklist li.ok:before{content:'✓';color:var(--accent)}.checklist li.ok{color:#e3f6ef}.advice{padding:14px 17px;background:#1c3040;border-left:3px solid var(--accent);border-radius:5px;font-size:14px}.range-head{margin:26px 0 12px}.range-head strong{color:var(--accent)}input[type=range]{width:100%;accent-color:var(--accent)}.options{display:flex;flex-wrap:wrap;gap:20px;margin:22px 0}.options label{font-weight:500}.options input{accent-color:var(--accent)}.primary{background:var(--accent);border:0;color:#06231b;font-weight:900;letter-spacing:.8px;padding:16px 24px;border-radius:9px;cursor:pointer;width:100%}.primary:hover{background:#93ffda}button:focus-visible,input:focus-visible{outline:2px solid #fff;outline-offset:3px}footer{border-top:1px solid var(--line);padding-top:22px;color:var(--muted);flex-wrap:wrap}@media(max-width:600px){.shell{padding:16px}.top{padding-bottom:40px}.privacy{font-size:9px}.panel{padding:20px 16px}.panel-header{align-items:flex-start}.chip{font-size:9px}.stats{gap:7px}.stats>div{padding:10px 7px}.stats span{font-size:8px;letter-spacing:.3px}.stats strong{font-size:20px}}
+
+/* The :root selector defines global CSS variables.
+   Variables beginning with -- store reusable colors.
+   color-scheme: dark tells the browser this site uses a dark theme. */
+:root{color-scheme:dark;--bg:#090e18;--panel:#111a29;--line:#2a3b50;--text:#f1f7ff;--muted:#9aadc2;--accent:#55f0bb}
+
+/* Apply border-box sizing to all elements.
+   This includes padding and borders in an element's total width. */
+*{box-sizing:border-box}
+
+/* Set the page background, font, text color, and line spacing.
+   radial-gradient creates the subtle colored glow in the background.
+   var() retrieves colors defined in :root. */
+body{margin:0;background:radial-gradient(ellipse at 80% 0%,#16334a 0%,transparent 40%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text);line-height:1.5}
+
+/* Center the website content and limit its maximum width. */
+.shell{max-width:900px;margin:auto;padding:24px 22px 45px}
+
+/* Flexbox arranges elements in rows.
+   These shared rules space headings and labels apart. */
+.top,footer,.panel-header,.meter-header,.range-head{display:flex;align-items:center;justify-content:space-between;gap:15px}
+
+/* Add space below the website header. */
+.top{padding:8px 0 60px}
+
+/* Make the ShieldCheck brand name bold and spaced out. */
+.brand{font-weight:900;letter-spacing:2px}
+
+/* Give the logo its green accent color and larger size. */
+.logo{color:var(--accent);font-size:27px}
+
+/* Apply consistent small uppercase-style text formatting.
+   letter-spacing controls the space between characters. */
+.privacy,.chip,.eyebrow,.meter-header,.stats span,footer{font-size:11px;font-weight:750;letter-spacing:1.4px}
+
+/* Highlight the privacy message in green. */
+.privacy{color:var(--accent)}
+
+/* Add spacing below the introduction section. */
+.hero{margin-bottom:35px}
+
+/* Style the small section labels in green. */
+.eyebrow{color:var(--accent);margin:0 0 10px}
+
+/* Style the main heading.
+   clamp() adjusts its font size based on screen width. */
+h1{font-size:clamp(36px,6vw,62px);letter-spacing:-2px;line-height:1.08;max-width:750px;margin:0 0 19px}
+
+/* Highlight the emphasized word in the heading. */
+h1 em{font-style:normal;color:var(--accent)}
+
+/* Style the introductory paragraph below the main heading. */
+.hero>p:last-child{color:var(--muted);max-width:650px;font-size:16px}
+
+/* Style the two main panels with gradients, borders,
+   rounded corners, spacing, and shadows. */
+.panel{background:linear-gradient(145deg,#162337,#101927);border:1px solid var(--line);border-radius:18px;padding:30px;margin:22px 0;box-shadow:0 16px 45px #0002}
+
+/* Add space below each panel heading. */
+.panel-header{margin-bottom:28px}
+
+/* Set the size and spacing of panel titles. */
+.panel-header h2{font-size:23px;margin:0;letter-spacing:-.5px}
+
+/* Style the LOCAL ONLY and CRYPTOGRAPHIC RNG badges. */
+.chip{color:var(--accent);border:1px solid #376c61;padding:7px 9px;border-radius:6px;white-space:nowrap}
+
+/* Style labels above form inputs. */
+label{font-size:14px;font-weight:650}
+
+/* Create the bordered container around password inputs and buttons. */
+.password-wrap{display:flex;border:1px solid #496078;border-radius:10px;margin-top:10px;overflow:hidden;background:#0b1422}
+
+/* Highlight the password input container when it has keyboard focus. */
+.password-wrap:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Style the text fields where passwords appear. */
+.password-wrap input{background:transparent;color:var(--text);border:0;padding:17px;font:inherit;min-width:0;flex:1;outline:none}
+
+/* Style the SHOW, HIDE, and COPY buttons. */
+.password-wrap button{border:0;border-left:1px solid var(--line);color:var(--accent);background:#172639;padding:0 18px;cursor:pointer;font-weight:800;letter-spacing:1px}
+
+/* Change button background color when the mouse hovers over it. */
+.password-wrap button:hover{background:#253c50}
+
+/* Style smaller explanatory notes using muted text. */
+.note,.footnote{color:var(--muted);font-size:12px}
+
+/* Position the strength meter heading and label. */
+.meter-header{margin:30px 0 9px;color:var(--muted)}
+
+/* Set the default color of the strength rating. */
+#strength-label{color:var(--text)}
+
+/* Create the background of the password strength bar. */
+.meter{height:11px;background:#29384a;border-radius:20px;overflow:hidden}
+
+/* Control the strength bar's fill and smooth transitions.
+   JavaScript changes its width and color when analyzing a password. */
+.meter>div{height:100%;width:0%;background:#f07171;transition:width .2s,background .2s}
+
+/* CSS Grid arranges the three password statistics into columns. */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:25px 0}
+
+/* Style each statistics box. */
+.stats>div{border:1px solid var(--line);background:#0c1726;border-radius:10px;padding:15px}
+
+/* Style the small labels inside the statistics boxes. */
+.stats span{display:block;color:var(--muted);font-size:10px}
+
+/* Make the statistics values larger. */
+.stats strong{font-size:24px}
+
+/* Style smaller section headings. */
+h3{font-size:16px}
+
+/* Remove default list bullets and space out checklist items. */
+.checklist{list-style:none;padding:0;display:grid;gap:10px}
+
+/* Set the text color and size of checklist items. */
+.checklist li{color:#aebdd0;font-size:14px}
+
+/* Display an empty circle before an incomplete requirement. */
+.checklist li:before{content:'○';color:#778da5;margin-right:11px}
+
+/* Display a green checkmark when a requirement is satisfied.
+   The .ok class is added by JavaScript. */
+.checklist li.ok:before{content:'✓';color:var(--accent)}
+
+/* Change the text color of completed checklist requirements. */
+.checklist li.ok{color:#e3f6ef}
+
+/* Style the password advice message with a colored background
+   and green left border. */
+.advice{padding:14px 17px;background:#1c3040;border-left:3px solid var(--accent);border-radius:5px;font-size:14px}
+
+/* Add spacing around the password length controls. */
+.range-head{margin:26px 0 12px}
+
+/* Highlight the selected password length in green. */
+.range-head strong{color:var(--accent)}
+
+/* Make the password length slider fill its container.
+   accent-color changes the browser's slider highlight color. */
+input[type=range]{width:100%;accent-color:var(--accent)}
+
+/* Arrange password generation options in a flexible row.
+   flex-wrap allows options to move to another line if needed. */
+.options{display:flex;flex-wrap:wrap;gap:20px;margin:22px 0}
+
+/* Set the font weight for option labels. */
+.options label{font-weight:500}
+
+/* Give the option checkboxes the green accent color. */
+.options input{accent-color:var(--accent)}
+
+/* Style the main Generate Password button. */
+.primary{background:var(--accent);border:0;color:#06231b;font-weight:900;letter-spacing:.8px;padding:16px 24px;border-radius:9px;cursor:pointer;width:100%}
+
+/* Make the Generate button lighter when hovered over. */
+.primary:hover{background:#93ffda}
+
+/* Display a visible outline when buttons or inputs receive
+   keyboard focus, improving accessibility. */
+button:focus-visible,input:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* Style the footer with a top border and flexible layout. */
+footer{border-top:1px solid var(--line);padding-top:22px;color:var(--muted);flex-wrap:wrap}
+
+/* A media query applies different CSS rules on smaller screens.
+   These rules activate when the screen width is 600px or less,
+   making the website easier to use on phones. */
+@media(max-width:600px){
+
+/* Reduce page padding on smaller screens. */
+.shell{padding:16px}
+
+/* Reduce the space below the header. */
+.top{padding-bottom:40px}
+
+/* Make the privacy message smaller. */
+.privacy{font-size:9px}
+
+/* Reduce padding inside the main panels. */
+.panel{padding:20px 16px}
+
+/* Align panel headings toward the top. */
+.panel-header{align-items:flex-start}
+
+/* Reduce badge text size. */
+.chip{font-size:9px}
+
+/* Reduce spacing between statistics boxes. */
+.stats{gap:7px}
+
+/* Reduce padding inside statistics boxes. */
+.stats>div{padding:10px 7px}
+
+/* Make statistics labels smaller on mobile devices. */
+.stats span{font-size:8px;letter-spacing:.3px}
+
+/* Make statistics values smaller on mobile devices. */
+.stats strong{font-size:20px}
+}
