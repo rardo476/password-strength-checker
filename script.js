@@ -80,6 +80,11 @@ function update(){
 
  // Show advice to help the user improve their password.
  $('advice').textContent=a.advice;
+
+ // Save only the strength rating, never the password itself.
+ if (a.length > 0) {
+   localStorage.setItem('lastStrengthRating', a.label);
+ }
 }
 
 // An event listener runs update() whenever the password input changes.
